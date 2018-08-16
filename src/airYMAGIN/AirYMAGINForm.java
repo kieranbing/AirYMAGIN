@@ -61,6 +61,9 @@ import javax.swing.ImageIcon;
 import java.awt.Dimension;
 
 import javax.swing.JTextPane;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyledDocument;
 
 public class AirYMAGINForm {
 
@@ -136,7 +139,7 @@ public class AirYMAGINForm {
 		
 		JLabel lblAirymaginStartup = new JLabel("AirYMAGIN - Setup page");
 		startTopPanel.add(lblAirymaginStartup);
-		lblAirymaginStartup.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblAirymaginStartup.setFont(new Font("Tahoma", Font.BOLD, 20));
 		
 		JPanel startCenterPanel = new JPanel();
 		startCenterPanel.setBackground(new Color(153, 204, 255));
@@ -203,13 +206,17 @@ public class AirYMAGINForm {
 		centerPanel.setBackground(new Color(153, 204, 255));
 		
 		JLabel lblUsername = new JLabel("Username:");
+		lblUsername.setFont(new Font("SansSerif", Font.PLAIN, 15));
 		
 		mainUsernameField = new JTextField();
+		mainUsernameField.setFont(new Font("SansSerif", Font.PLAIN, 15));
 		mainUsernameField.setColumns(16);
 		
 		JLabel lblPassword = new JLabel("Password:");
+		lblPassword.setFont(new Font("SansSerif", Font.PLAIN, 15));
 		
 		mainPasswordField = new JPasswordField();
+		mainPasswordField.setFont(new Font("SansSerif", Font.PLAIN, 15));
 		mainPasswordField.setColumns(16);
 		centerPanel.setLayout(new FormLayout(new ColumnSpec[] {
 				ColumnSpec.decode("default:grow"),
@@ -283,7 +290,7 @@ public class AirYMAGINForm {
 		successPage.setLayout(new MigLayout("", "[grow][300,grow 50][grow]", "[grow][][][grow,center][grow 50,center][grow]"));
 		
 		JLabel lblCongradulati = new JLabel("Congratulations!");
-		lblCongradulati.setFont(new Font("SansSerif", Font.PLAIN, 20));
+		lblCongradulati.setFont(new Font("SansSerif", Font.BOLD, 20));
 		successPage.add(lblCongradulati, "cell 1 1,alignx center");
 		
 		JTextPane txtpnYouHaveSuccessfuly = new JTextPane();
@@ -291,6 +298,10 @@ public class AirYMAGINForm {
 		txtpnYouHaveSuccessfuly.setEditable(false);
 		txtpnYouHaveSuccessfuly.setText("You have successfully checked in for your flight to the North Pole and have escaped summer! We thank you for having chosen Air-YMAGIN and we wish you safe travels to wherever your journey might take you. \r\nTo complete the escape room give us a call on the walkie talkie and tell us the destination of your flight and the code phrase below.");
 		successPage.add(txtpnYouHaveSuccessfuly, "cell 1 3,alignx center,growy");
+		StyledDocument doc = txtpnYouHaveSuccessfuly.getStyledDocument();
+		SimpleAttributeSet center = new SimpleAttributeSet();
+		StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
+		doc.setParagraphAttributes(0, doc.getLength(), center, false);
 		
 		lblCodePhrase = new JLabel("Code Phrase Placehoder");
 		lblCodePhrase.setFont(new Font("SansSerif", Font.BOLD, 16));
@@ -302,6 +313,7 @@ public class AirYMAGINForm {
 		lockoutPage.setLayout(new MigLayout("", "[grow][][grow]", "[grow][][][][grow]"));
 		
 		JLabel lblOhNoIt = new JLabel("OH NO! It seems you've been locked out of our system.");
+		lblOhNoIt.setFont(new Font("SansSerif", Font.BOLD, 15));
 		lockoutPage.add(lblOhNoIt, "cell 1 1,alignx center");
 		
 		JLabel label = new JLabel("");
@@ -309,6 +321,7 @@ public class AirYMAGINForm {
 		lockoutPage.add(label, "cell 1 2,alignx center");
 		
 		JLabel lblNewLabel = new JLabel("Please call for assistance");
+		lblNewLabel.setFont(new Font("SansSerif", Font.BOLD, 15));
 		lockoutPage.add(lblNewLabel, "cell 1 3,alignx center");
 	}
 	
