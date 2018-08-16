@@ -134,7 +134,7 @@ public class AirYMAGINForm {
 		startTopPanel.setBackground(new Color(51, 153, 255));
 		startupPage.add(startTopPanel, BorderLayout.NORTH);
 		
-		JLabel lblAirymaginStartup = new JLabel("AirYMAGIN - Startup page");
+		JLabel lblAirymaginStartup = new JLabel("AirYMAGIN - Setup page");
 		startTopPanel.add(lblAirymaginStartup);
 		lblAirymaginStartup.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		
@@ -194,6 +194,7 @@ public class AirYMAGINForm {
 		topPanel.setBackground(new Color(51, 153, 255));
 		
 		JLabel lblAirymagin = new JLabel("AirYMAGIN");
+		lblAirymagin.setIcon(new ImageIcon(AirYMAGINForm.class.getResource("/images/logo_40x40.jpg")));
 		lblAirymagin.setFont(new Font("Tahoma", Font.BOLD, 20));
 		topPanel.add(lblAirymagin);
 		
@@ -288,7 +289,7 @@ public class AirYMAGINForm {
 		JTextPane txtpnYouHaveSuccessfuly = new JTextPane();
 		txtpnYouHaveSuccessfuly.setBackground(new Color(204, 255, 204));
 		txtpnYouHaveSuccessfuly.setEditable(false);
-		txtpnYouHaveSuccessfuly.setText("You have successfully checked in for your flight to the North Pole and have escaped summer! We thank you for having chosen Air-YMAGIN and we wish you safe travels to wherever your journey might take you. \r\nTo complete the escape room give us a call on the walkie talkie and tell us the destination of your flight and the code phrase bellow.");
+		txtpnYouHaveSuccessfuly.setText("You have successfully checked in for your flight to the North Pole and have escaped summer! We thank you for having chosen Air-YMAGIN and we wish you safe travels to wherever your journey might take you. \r\nTo complete the escape room give us a call on the walkie talkie and tell us the destination of your flight and the code phrase below.");
 		successPage.add(txtpnYouHaveSuccessfuly, "cell 1 3,alignx center,growy");
 		
 		lblCodePhrase = new JLabel("Code Phrase Placehoder");
