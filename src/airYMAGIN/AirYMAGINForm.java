@@ -329,6 +329,7 @@ public class AirYMAGINForm {
 		public void actionPerformed(ActionEvent e) {
 			String command = e.getActionCommand();  
 	         
+			// Start button script
 	         if( command.equals( "Start" ))  {
 	        	 username = startUsernameField.getText().trim();
 	        	 correctPassword = startPasswordField.getText().trim().toCharArray();
@@ -338,16 +339,21 @@ public class AirYMAGINForm {
 	        	 CardLayout cl = (CardLayout)(frmAirymagin.getContentPane().getLayout()); 
 	        	 cl.show(frmAirymagin.getContentPane(), "mainPageCard"); 
 	        	 
+	        // Clear button script	 
 	         } else if( command.equals( "Clear" ) )  {
 	        	 mainUsernameField.setText("");
 	        	 mainPasswordField.setText("");
 	        	
+	        // Submit button script	 
 	         } else if( command.equals( "Submit" ) )  {	 
+	        	 // Check username and password
 	        	 if (mainUsernameField.getText().trim().equals(username) &&
 	        			 Arrays.equals (mainPasswordField.getPassword(), correctPassword)){
+	        		 // If valid go to victory page
 	        		 CardLayout cl = (CardLayout)(frmAirymagin.getContentPane().getLayout()); 
 		        	 cl.show(frmAirymagin.getContentPane(), "successPageCard"); 
 	        	 } else {
+	        		 // If invalid lose a life and get sent to fail page or lockout page
 	        		 remainingAttempts -= 1; 
 	        		 lblLives.setText(Integer.toString(remainingAttempts));
 	        		 
@@ -359,7 +365,8 @@ public class AirYMAGINForm {
 			        	 cl.show(frmAirymagin.getContentPane(), "failPageCard"); 
 	        		 }
 	        	 }
-	        	 
+	        
+	         // Fail page back button script
 	         } else if( command.equals( "Back" ) )  {
 	        	 mainUsernameField.setText("");
 	        	 mainPasswordField.setText("");
