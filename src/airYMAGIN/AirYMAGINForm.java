@@ -88,6 +88,8 @@ public class AirYMAGINForm {
 	private JLabel lblVictoryTitle; 
 	private JLabel lblLockoutTitle;
 	private JLabel lblLockoutInstruction; 
+	private JLabel lblVictoryCopyright;
+	private JLabel lblLockoutCopyright;
 	
 	// Non-static labels (Change from functionality) 
 	private JLabel lblLives; 
@@ -101,8 +103,6 @@ public class AirYMAGINForm {
 	private char[] correctPassword;
 	
 	private int remainingAttempts = 3; 
-	private JLabel lblVictoryCopyright;
-	private JLabel lblLockoutCopyright;
 
 	/**
 	 * Launch the application.
@@ -369,53 +369,29 @@ public class AirYMAGINForm {
 		lockoutPage.add(lblLockoutCopyright, "cell 1 4,alignx center,aligny bottom");
 	}
 	
+	/**
+	 * Functions
+	 */
 	private class ButtonClickListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			String command = e.getActionCommand();  
 	         
 			// Start button script
 	         if( command.equals( "Start" ))  {
-	        	 username = setupUsernameField.getText().trim();
-	        	 correctPassword = setupPasswordField.getText().trim().toCharArray();
-	        	 confirmationPhrase = setupConfirmationField.getText().trim();
-	        	 lblVictoryCodePhrase.setText(confirmationPhrase); 
-	        	 
-	        	 CardLayout cl = (CardLayout)(frmAirymagin.getContentPane().getLayout()); 
-	        	 cl.show(frmAirymagin.getContentPane(), "mainPageCard"); 
+	        	 setupApp(); 
 	        	 
 	        // Clear button script	 
 	         } else if( command.equals( "Clear" ) )  {
-	        	 mainUsernameField.setText("");
-	        	 mainPasswordField.setText("");
+	        	 clearMainPage();
 	        	
 	        // Submit button script	 
 	         } else if( command.equals( "Submit" ) )  {	 
-	        	 // Check username and password
-	        	 if (mainUsernameField.getText().trim().equals(username) &&
-	        			 Arrays.equals (mainPasswordField.getPassword(), correctPassword)){
-	        		 // If valid go to victory page
-	        		 CardLayout cl = (CardLayout)(frmAirymagin.getContentPane().getLayout()); 
-		        	 cl.show(frmAirymagin.getContentPane(), "successPageCard"); 
-	        	 } else {
-	        		 // If invalid lose a life and get sent to fail page or lockout page
-	        		 remainingAttempts -= 1; 
-	        		 lblLives.setText(Integer.toString(remainingAttempts));
-	        		 
-	        		 if(remainingAttempts <= 0){
-	        			 CardLayout cl = (CardLayout)(frmAirymagin.getContentPane().getLayout()); 
-			        	 cl.show(frmAirymagin.getContentPane(), "lockoutPageCard"); 
-	        		 } else {
-	        			 CardLayout cl = (CardLayout)(frmAirymagin.getContentPane().getLayout()); 
-			        	 cl.show(frmAirymagin.getContentPane(), "failPageCard"); 
-	        		 }
-	        	 }
+	        	 verifyCredentials();
 	        
 	         // Fail page back button script
 	         } else if( command.equals( "Back" ) )  {
-	        	 mainUsernameField.setText("");
-	        	 mainPasswordField.setText("");
-	        	 CardLayout cl = (CardLayout)(frmAirymagin.getContentPane().getLayout()); 
-	        	 cl.show(frmAirymagin.getContentPane(), "mainPageCard"); 
+	        	 clearMainPage(); 
+	        	 goToMainPage(); 
 	        	
 	         // Change language button script 
 	         } else if ( command.equals( "Language" ) ){
@@ -424,6 +400,47 @@ public class AirYMAGINForm {
 	         } else {
 	        	 System.out.println(" ACTION COMMAND ERROR ");
 	         }  	
+		}
+	}
+	
+	private void setupApp(){
+		username = setupUsernameField.getText().trim();
+		correctPassword = setupPasswordField.getText().trim().toCharArray();
+		confirmationPhrase = setupConfirmationField.getText().trim();
+		lblVictoryCodePhrase.setText(confirmationPhrase); 
+
+		goToMainPage();
+	}
+	
+	private void goToMainPage(){
+		CardLayout cl = (CardLayout)(frmAirymagin.getContentPane().getLayout()); 
+		cl.show(frmAirymagin.getContentPane(), "mainPageCard"); 
+	}
+	
+	private void clearMainPage(){
+		mainUsernameField.setText("");
+		mainPasswordField.setText("");
+	}
+	
+	private void verifyCredentials(){
+		// Check username and password
+		if (mainUsernameField.getText().trim().equals(username) &&
+				Arrays.equals (mainPasswordField.getPassword(), correctPassword)){
+			// If valid go to victory page
+			CardLayout cl = (CardLayout)(frmAirymagin.getContentPane().getLayout()); 
+			cl.show(frmAirymagin.getContentPane(), "successPageCard"); 
+		} else {
+			// If invalid lose a life and get sent to fail page or lockout page
+			remainingAttempts -= 1; 
+			lblLives.setText(Integer.toString(remainingAttempts));
+
+			if(remainingAttempts <= 0){
+				CardLayout cl = (CardLayout)(frmAirymagin.getContentPane().getLayout()); 
+				cl.show(frmAirymagin.getContentPane(), "lockoutPageCard"); 
+			} else {
+				CardLayout cl = (CardLayout)(frmAirymagin.getContentPane().getLayout()); 
+				cl.show(frmAirymagin.getContentPane(), "failPageCard"); 
+			}
 		}
 	}
 	
@@ -474,10 +491,5 @@ public class AirYMAGINForm {
 		lblLockoutInstruction.setText(Messages.getString("AirYMAGINForm.lblLockoutInstruction.text")); 	
 		lblVictoryCopyright.setText(Messages.getString("AirYMAGINForm.lblVictoryCopyright.text"));
 		lblLockoutCopyright.setText(Messages.getString("AirYMAGINForm.lblLockoutCopyright.text"));
-	}
-	
-	// Getter(s) --------------------------
-	public String getLanguage(){
-		return language; 
 	}
 }
