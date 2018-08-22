@@ -1,6 +1,6 @@
 # AirYMAGIN
 
-AirYMAGIN is a standalone Java application built using a Swing GUI. It was created as part of an escape room fundraising project run by the YMAGIN (Youth MAndate for Greater Involvement) committee of the IITB (Innovation, Information, and Technology) branch of ESDC (Employment and Social Development Canada). AirYMAGIN acts as a login page, asking the gamer (individual playing the escape room) for a username and password that they have to find as part of the game. To discourage participants from just guessing, unsuccessful attempts to enter the credentials cause them to lose access attempts, eventually causing them to be locked out of the system. If they are successful in entering the right credentials they will be brought to a victory screen and given the confirmation phrase to prove they completed the room.
+AirYMAGIN is a standalone Java application built using a Swing GUI. It was created as part of an escape room fundraising project run by the YMAGIN (Youth MAndate for Greater Involvement) committee of the IITB (Innovation, Information, and Technology) branch of ESDC (Employment and Social Development Canada). AirYMAGIN acts as a login page, asking the gamer (individual playing the escape room) for a username and password that they have to find as part of the game. To discourage participants from just guessing, unsuccessful attempts to enter the credentials cause them to lose access attempts, eventually causing them to be locked out of the system. If they are successful in entering the right credentials they will be brought to a victory screen and given the confirmation phrase to prove they completed the room. The application is also bilingual, the language can be changed between French and English by clicking a button on the setup or main pages. 
 
 ## Using the application
 
@@ -17,8 +17,9 @@ I used [Git](https://git-scm.com/) for versioning.
 
 ## Author
 
-* **Kieran Bingham**  - [kieranbing](https://github.com/kieranbing)
+* **Kieran Bingham**  - *Developer* - [kieranbing](https://github.com/kieranbing)
 
 ## Acknowledgments
 
 * I'd like to Acknowledge the other members of the YMAGIN escape room planning group for the ideas that led to this and for all the feedback.
+* I'd also like to thank Benoît Lévesque for helping translate the app into French
