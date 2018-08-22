@@ -157,7 +157,7 @@ public class AirYMAGINForm {
 		setupPage.add(setupTopPanel, BorderLayout.NORTH);
 		setupTopPanel.setLayout(new MigLayout("", "[250px][76px,grow,right]", "[28px]"));
 		
-		lblSetupTitle = new JLabel(Messages.getString("AirYMAGINForm.lblAirymaginStartup.text")); //$NON-NLS-1$
+		lblSetupTitle = new JLabel(Messages.getString("AirYMAGINForm.lblSetupTitle.text")); //$NON-NLS-1$
 		lblSetupTitle.setIcon(new ImageIcon(AirYMAGINForm.class.getResource("/images/logo_40x40.jpg")));
 		setupTopPanel.add(lblSetupTitle, "cell 0 0,alignx left,aligny center");
 		lblSetupTitle.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -184,7 +184,7 @@ public class AirYMAGINForm {
 				FormFactory.RELATED_GAP_ROWSPEC,
 				FormFactory.DEFAULT_ROWSPEC,}));
 		
-		lblSetupUsername = new JLabel(Messages.getString("AirYMAGINForm.lblUsername_1.text")); //$NON-NLS-1$
+		lblSetupUsername = new JLabel(Messages.getString("AirYMAGINForm.lblSetupUsername.text")); //$NON-NLS-1$
 		setupCenterPanel.add(lblSetupUsername, "2, 2, right, default");
 		
 		setupUsernameField = new JTextField();
@@ -198,7 +198,7 @@ public class AirYMAGINForm {
 		setupCenterPanel.add(setupPasswordField, "4, 4, fill, default");
 		setupPasswordField.setColumns(10);
 		
-		lblSetConfirmationPhrase = new JLabel(Messages.getString("AirYMAGINForm.lblConfirmationPhrase.text")); //$NON-NLS-1$
+		lblSetConfirmationPhrase = new JLabel(Messages.getString("AirYMAGINForm.lblSetConfirmationPhrase.text")); //$NON-NLS-1$
 		setupCenterPanel.add(lblSetConfirmationPhrase, "2, 6, right, default");
 		
 		setupConfirmationField = new JTextField();
@@ -209,7 +209,7 @@ public class AirYMAGINForm {
 		setupBottomPanel.setBackground(new Color(51, 153, 255));
 		setupPage.add(setupBottomPanel, BorderLayout.SOUTH);
 		
-		startButton = new JButton(Messages.getString("AirYMAGINForm.btnStart.text")); //$NON-NLS-1$
+		startButton = new JButton(Messages.getString("AirYMAGINForm.startButton.text")); //$NON-NLS-1$
 		startButton.setActionCommand("Start");
 		startButton.addActionListener(new ButtonClickListener()); 
 		setupBottomPanel.add(startButton);
@@ -224,7 +224,7 @@ public class AirYMAGINForm {
 		mainTopPanel.setBackground(new Color(51, 153, 255));
 		mainTopPanel.setLayout(new MigLayout("", "[158px][grow,right]", "[40px]"));
 		
-		lblMainTitle = new JLabel(Messages.getString("AirYMAGINForm.lblAirymagin.text")); //$NON-NLS-1$
+		lblMainTitle = new JLabel(Messages.getString("AirYMAGINForm.lblMainTitle.text")); //$NON-NLS-1$
 		lblMainTitle.setIcon(new ImageIcon(AirYMAGINForm.class.getResource("/images/logo_40x40.jpg")));
 		lblMainTitle.setFont(new Font("Tahoma", Font.BOLD, 20));
 		mainTopPanel.add(lblMainTitle, "cell 0 0,alignx left,aligny top");
@@ -238,14 +238,14 @@ public class AirYMAGINForm {
 		mainPage.add(centerPanel, BorderLayout.CENTER);
 		centerPanel.setBackground(new Color(153, 204, 255));
 		
-		lblMainUsername = new JLabel(Messages.getString("AirYMAGINForm.lblUsername.text")); //$NON-NLS-1$
+		lblMainUsername = new JLabel(Messages.getString("AirYMAGINForm.lblMainUsername.text")); //$NON-NLS-1$
 		lblMainUsername.setFont(new Font("SansSerif", Font.PLAIN, 15));
 		
 		mainUsernameField = new JTextField();
 		mainUsernameField.setFont(new Font("SansSerif", Font.PLAIN, 15));
 		mainUsernameField.setColumns(16);
 		
-		lblMainPassword = new JLabel(Messages.getString("AirYMAGINForm.lblPassword.text")); //$NON-NLS-1$
+		lblMainPassword = new JLabel(Messages.getString("AirYMAGINForm.lblMainPassword.text")); //$NON-NLS-1$
 		lblMainPassword.setFont(new Font("SansSerif", Font.PLAIN, 15));
 		
 		mainPasswordField = new JPasswordField();
@@ -295,7 +295,7 @@ public class AirYMAGINForm {
 		failCenterPanel.setBackground(new Color(255, 102, 102));
 		failPage.add(failCenterPanel, BorderLayout.CENTER);
 		
-		lblFailTitle = new JLabel(Messages.getString("AirYMAGINForm.lblError.text")); //$NON-NLS-1$
+		lblFailTitle = new JLabel(Messages.getString("AirYMAGINForm.lblFailTitle.text")); //$NON-NLS-1$
 		lblFailTitle.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblFailTitle.setIcon(new ImageIcon(AirYMAGINForm.class.getResource("/com/sun/java/swing/plaf/windows/icons/Error.gif")));
 		failCenterPanel.setLayout(new MigLayout("", "[grow][146px][grow]", "[grow][32px][20px][37px][][grow]"));
@@ -324,14 +324,14 @@ public class AirYMAGINForm {
 		frmAirymagin.getContentPane().add(victoryPage, "successPageCard");
 		victoryPage.setLayout(new MigLayout("", "[grow][300,grow 50][grow]", "[grow][][][grow,center][grow 50,center][grow]"));
 		
-		lblVictoryTitle = new JLabel(Messages.getString("AirYMAGINForm.lblCongradulati.text")); //$NON-NLS-1$
+		lblVictoryTitle = new JLabel(Messages.getString("AirYMAGINForm.lblVictoryTitle.text")); //$NON-NLS-1$
 		lblVictoryTitle.setFont(new Font("SansSerif", Font.BOLD, 20));
 		victoryPage.add(lblVictoryTitle, "cell 1 1,alignx center");
 		
 		txtpnVictoryText = new JTextPane();
 		txtpnVictoryText.setBackground(new Color(204, 255, 204));
 		txtpnVictoryText.setEditable(false);
-		txtpnVictoryText.setText(Messages.getString("AirYMAGINForm.txtpnYouHaveSuccessfuly.text")); //$NON-NLS-1$
+		txtpnVictoryText.setText(Messages.getString("AirYMAGINForm.txtpnVictoryText.text")); //$NON-NLS-1$
 		victoryPage.add(txtpnVictoryText, "cell 1 3,alignx center,growy");
 		StyledDocument doc = txtpnVictoryText.getStyledDocument();
 		SimpleAttributeSet center = new SimpleAttributeSet();
@@ -342,7 +342,7 @@ public class AirYMAGINForm {
 		lblVictoryCodePhrase.setFont(new Font("SansSerif", Font.BOLD, 16));
 		victoryPage.add(lblVictoryCodePhrase, "cell 1 4,alignx center,aligny center");
 		
-		lblVictoryCopyright = new JLabel(Messages.getString("AirYMAGINForm.lblIitbymagin.text")); //$NON-NLS-1$
+		lblVictoryCopyright = new JLabel(Messages.getString("AirYMAGINForm.lblVictoryCopyright.text")); //$NON-NLS-1$
 		lblVictoryCopyright.setForeground(Color.GRAY);
 		victoryPage.add(lblVictoryCopyright, "cell 1 5,alignx center,aligny bottom");
 		
@@ -352,7 +352,7 @@ public class AirYMAGINForm {
 		frmAirymagin.getContentPane().add(lockoutPage, "lockoutPageCard");
 		lockoutPage.setLayout(new MigLayout("", "[grow][][grow]", "[grow][][][][grow]"));
 		
-		lblLockoutTitle = new JLabel(Messages.getString("AirYMAGINForm.lblOhNoIt.text")); //$NON-NLS-1$
+		lblLockoutTitle = new JLabel(Messages.getString("AirYMAGINForm.lblLockoutTitle.text")); //$NON-NLS-1$
 		lblLockoutTitle.setFont(new Font("SansSerif", Font.BOLD, 15));
 		lockoutPage.add(lblLockoutTitle, "cell 1 1,alignx center");
 		
@@ -360,7 +360,7 @@ public class AirYMAGINForm {
 		lblLockoutSymbol.setIcon(new ImageIcon(AirYMAGINForm.class.getResource("/javax/swing/plaf/metal/icons/ocean/error.png")));
 		lockoutPage.add(lblLockoutSymbol, "cell 1 2,alignx center");
 		
-		lblLockoutInstruction = new JLabel(Messages.getString("AirYMAGINForm.lblNewLabel.text")); //$NON-NLS-1$
+		lblLockoutInstruction = new JLabel(Messages.getString("AirYMAGINForm.lblLockoutInstruction.text")); //$NON-NLS-1$
 		lblLockoutInstruction.setFont(new Font("SansSerif", Font.BOLD, 15));
 		lockoutPage.add(lblLockoutInstruction, "cell 1 3,alignx center");
 		
@@ -449,7 +449,7 @@ public class AirYMAGINForm {
 		Messages.changeLanguage(language);
 		
 		// Update Buttons
-		startButton.setText(Messages.getString("AirYMAGINForm.btnStart.text")); 
+		startButton.setText(Messages.getString("AirYMAGINForm.startButton.text")); 
 		clearButton.setText(Messages.getString("AirYMAGINForm.clearButton.text")); 
 		submitButton.setText(Messages.getString("AirYMAGINForm.submitButton.text"));
 		failBackButton.setText(Messages.getString("AirYMAGINForm.failBackButton.text"));
@@ -457,22 +457,22 @@ public class AirYMAGINForm {
 		mainLangButton.setText(Messages.getString("AirYMAGINForm.mainLangButton.text"));
 		
 		// Update Text Pane
-		txtpnVictoryText.setText(Messages.getString("AirYMAGINForm.txtpnYouHaveSuccessfuly.text")); 
+		txtpnVictoryText.setText(Messages.getString("AirYMAGINForm.txtpnVictoryText.text")); 
 		
 		// Update labels
-		lblSetupTitle.setText(Messages.getString("AirYMAGINForm.lblAirymaginStartup.text")); 
-		lblSetupUsername.setText(Messages.getString("AirYMAGINForm.lblUsername_1.text"));
+		lblSetupTitle.setText(Messages.getString("AirYMAGINForm.lblSetupTitle.text")); 
+		lblSetupUsername.setText(Messages.getString("AirYMAGINForm.lblSetupUsername.text"));
 		lblUserPassword.setText(Messages.getString("AirYMAGINForm.lblUserPassword.text"));
-		lblSetConfirmationPhrase.setText(Messages.getString("AirYMAGINForm.lblConfirmationPhrase.text"));
-		lblMainTitle.setText(Messages.getString("AirYMAGINForm.lblAirymagin.text"));
-		lblMainUsername.setText(Messages.getString("AirYMAGINForm.lblUsername.text"));
-		lblMainPassword.setText(Messages.getString("AirYMAGINForm.lblPassword.text"));
-		lblFailTitle.setText(Messages.getString("AirYMAGINForm.lblError.text"));
+		lblSetConfirmationPhrase.setText(Messages.getString("AirYMAGINForm.lblSetConfirmationPhrase.text"));
+		lblMainTitle.setText(Messages.getString("AirYMAGINForm.lblMainTitle.text"));
+		lblMainUsername.setText(Messages.getString("AirYMAGINForm.lblMainUsername.text"));
+		lblMainPassword.setText(Messages.getString("AirYMAGINForm.lblMainPassword.text"));
+		lblFailTitle.setText(Messages.getString("AirYMAGINForm.lblFailTitle.text"));
 		lblAttemptsRemaining.setText(Messages.getString("AirYMAGINForm.lblAttemptsRemaining.text"));
-		lblVictoryTitle.setText(Messages.getString("AirYMAGINForm.lblCongradulati.text"));
-		lblLockoutTitle.setText(Messages.getString("AirYMAGINForm.lblOhNoIt.text"));
+		lblVictoryTitle.setText(Messages.getString("AirYMAGINForm.lblVictoryTitle.text"));
+		lblLockoutTitle.setText(Messages.getString("AirYMAGINForm.lblLockoutTitle.text"));
 		lblLockoutInstruction.setText(Messages.getString("AirYMAGINForm.lblLockoutInstruction.text")); 	
-		lblVictoryCopyright.setText(Messages.getString("AirYMAGINForm.lblIitbymagin.text"));
+		lblVictoryCopyright.setText(Messages.getString("AirYMAGINForm.lblVictoryCopyright.text"));
 		lblLockoutCopyright.setText(Messages.getString("AirYMAGINForm.lblLockoutCopyright.text"));
 	}
 	
